@@ -121,10 +121,11 @@ public class MainWindow extends JFrame {
 		/**
 		 * Affichage de la fenêtre
 		 */
+		this.add(mainPanel);
 		this.pack();
 		setResizable(true);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		setSize(1100, 600);
+		setSize(600, 600);
 		centerWindow();
 	}
 
@@ -140,7 +141,13 @@ public class MainWindow extends JFrame {
 
 
 	public void setMainPanel(JPanel mainPanel) {
+		this.mainPanel.removeAll();
+		this.mainPanel.revalidate();
 		this.mainPanel = mainPanel;
+		this.add(mainPanel);
+		
+		
+		
 	}
 	
 	
