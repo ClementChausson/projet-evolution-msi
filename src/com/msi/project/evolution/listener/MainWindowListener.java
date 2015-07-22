@@ -5,8 +5,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import com.msi.project.evolution.gui.LocalWindow;
 import com.msi.project.evolution.gui.MainWindow;
+import com.msi.project.evolution.gui.PrinterWindow;
+import com.msi.project.evolution.gui.ScreenWindow;
 import com.msi.project.evolution.gui.UserWindow;
+import com.msi.project.evolution.gui.WorkstationWindow;
 
 
 public class MainWindowListener implements ActionListener{
@@ -29,16 +33,16 @@ public class MainWindowListener implements ActionListener{
 			this.window.setMainPanel(new UserWindow(window));
 			break ;
 		case "CreateLocal":
-			jop1.showMessageDialog(window.getMainPanel(), "Vous avez choisi de créer un local", "Info", JOptionPane.INFORMATION_MESSAGE);
+			this.window.setMainPanel(new LocalWindow(window));			
 			break ;
 		case "CreateScreen":
-			jop1.showMessageDialog(window.getMainPanel(), "Vous avez choisi de créer un écran", "Info", JOptionPane.INFORMATION_MESSAGE);
+			this.window.setMainPanel(new ScreenWindow(window));			
 			break ;
 		case "CreatePrinter":
-			jop1.showMessageDialog(window.getMainPanel(), "Vous avez choisi de créer une imprimante", "Info", JOptionPane.INFORMATION_MESSAGE);
+			this.window.setMainPanel(new PrinterWindow(window));			
 			break ;
 		case "CreatePoste":
-			jop1.showMessageDialog(window.getMainPanel(), "Vous avez choisi de créer un poste", "Info", JOptionPane.INFORMATION_MESSAGE);
+			this.window.setMainPanel(new WorkstationWindow(window));			
 			break ;
 		case "SearchUser":
 			jop1.showMessageDialog(window.getMainPanel(), "Vous avez choisi de chercher un utilisateur", "Info", JOptionPane.INFORMATION_MESSAGE);
