@@ -3,8 +3,10 @@ package com.msi.project.evolution.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import com.msi.project.evolution.gui.AboutWindow;
 import com.msi.project.evolution.gui.LocalWindow;
 import com.msi.project.evolution.gui.MainWindow;
 import com.msi.project.evolution.gui.PrinterWindow;
@@ -59,6 +61,10 @@ public class MainWindowListener implements ActionListener{
 		case "SearchScreen":
 			jop1.showMessageDialog(window.getMainPanel(), "Vous avez choisi de chercher une imprimante", "Info", JOptionPane.INFORMATION_MESSAGE);
 			break ;
+		case "About":
+			JFrame about = new AboutWindow();
+			about.setVisible(true);
+			break;
 		case "Exit":
 			Object[] options = { "Oui", "Non" };
 			int rep = JOptionPane.showOptionDialog(window.getMainPanel(), "Souhaitez vous réellement fermer l'application ?", "Quitter l'application",

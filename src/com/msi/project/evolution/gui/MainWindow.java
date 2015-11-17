@@ -55,12 +55,12 @@ public class MainWindow extends JFrame {
 		JMenuItem localSearchItem = new JMenuItem("Local");
 		JMenuItem screenSearchItem = new JMenuItem("Ecran");
 		JMenuItem printerSearchItem = new JMenuItem("Imprimante");
-		JMenuItem posteSearchItem = new JMenuItem("Imprimante");
+		JMenuItem posteSearchItem = new JMenuItem("Poste");
 
-		searchSubMenu.add(userSearchItem);
+/*		searchSubMenu.add(userSearchItem);
 		searchSubMenu.add(localSearchItem);
 		searchSubMenu.add(screenSearchItem);
-		searchSubMenu.add(printerSearchItem);
+		searchSubMenu.add(printerSearchItem);*/
 		searchSubMenu.add(posteSearchItem);
 
 		
@@ -112,20 +112,23 @@ public class MainWindow extends JFrame {
 		printerSearchItem.addActionListener(mWL);
 		printerSearchItem.setActionCommand("SearchPrinter");
 		
-		printerSearchItem.addActionListener(mWL);
-		printerSearchItem.setActionCommand("SearchPoste");
+		posteSearchItem.addActionListener(mWL);
+		posteSearchItem.setActionCommand("SearchPoste");
 		
 		quitterMenuItem.addActionListener(mWL);
 		quitterMenuItem.setActionCommand("Exit");
+		
+		aProposMenuItem.addActionListener(mWL);
+		aProposMenuItem.setActionCommand("About");
 		
 		/**
 		 * Affichage de la fenêtre
 		 */
 		this.add(mainPanel);
 		this.pack();
-		setResizable(true);
+		this.setSize(700, 700);
+		setResizable(false);
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		setSize(600, 600);
 		centerWindow();
 	}
 
