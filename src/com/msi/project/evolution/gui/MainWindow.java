@@ -145,9 +145,11 @@ public class MainWindow extends JFrame {
 
 	public void setMainPanel(JPanel mainPanel) {
 		this.mainPanel.removeAll();
-		this.mainPanel.revalidate();
 		this.mainPanel = mainPanel;
-		this.add(mainPanel);
+		this.setContentPane(mainPanel);
+		this.revalidate();
+		this.repaint();
+		this.setVisible(true);
 		
 		
 		

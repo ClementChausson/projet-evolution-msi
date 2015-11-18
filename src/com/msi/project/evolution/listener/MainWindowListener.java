@@ -11,6 +11,7 @@ import com.msi.project.evolution.gui.LocalWindow;
 import com.msi.project.evolution.gui.MainWindow;
 import com.msi.project.evolution.gui.PrinterWindow;
 import com.msi.project.evolution.gui.ScreenWindow;
+import com.msi.project.evolution.gui.SearchWindow;
 import com.msi.project.evolution.gui.UserWindow;
 import com.msi.project.evolution.gui.WorkstationWindow;
 
@@ -50,7 +51,7 @@ public class MainWindowListener implements ActionListener{
 			jop1.showMessageDialog(window.getMainPanel(), "Vous avez choisi de chercher un utilisateur", "Info", JOptionPane.INFORMATION_MESSAGE);
 			break ;
 		case "SearchPoste":
-			jop1.showMessageDialog(window.getMainPanel(), "Vous avez choisi de chercher un poste", "Info", JOptionPane.INFORMATION_MESSAGE);
+			this.window.setMainPanel(new SearchWindow(window));			
 			break ;
 		case "SearchLocal":
 			jop1.showMessageDialog(window.getMainPanel(), "Vous avez choisi de chercher un local", "Info", JOptionPane.INFORMATION_MESSAGE);
