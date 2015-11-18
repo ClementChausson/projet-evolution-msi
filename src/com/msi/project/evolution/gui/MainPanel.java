@@ -8,6 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.msi.project.evolution.Main;
+
 public class MainPanel extends JPanel {
 	
 	private MainWindow mainWindow ;
@@ -25,12 +27,12 @@ public class MainPanel extends JPanel {
 		mainPanel.setLayout(new GridLayout(3,1));
 	
 		// Image de bienvenue
-		JLabel bienvenue = new JLabel(new ImageIcon("resources/bienvenue.jpg"));
+		JLabel bienvenue = new JLabel(new ImageIcon(MainPanel.class.getResource("/bienvenue.jpg")));
 		
 		// Images CESI et PMI
 		JPanel imgs = new JPanel(new GridLayout(1,2));
-		imgs.add(new JLabel(new ImageIcon("resources/logoCesi.png")));
-		imgs.add(new JLabel(new ImageIcon("resources/PMI.jpeg")));
+		imgs.add(new JLabel(new ImageIcon(MainPanel.class.getResource("/logoCesi.png"))));
+		imgs.add(new JLabel(new ImageIcon(MainPanel.class.getResource("/PMI.jpeg"))));
 
 		//Texte explicatif
 		JPanel txtExplicatif = new JPanel();
