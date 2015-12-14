@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.msi.project.evolution.listener.CreationListener;
+
 public class WorkstationWindow extends JPanel {
 	private MainWindow mainWindow ;
 	private JPanel mainPanel;
@@ -55,6 +57,14 @@ public class WorkstationWindow extends JPanel {
 		/* Création des boutons */
 		JButton btnValider = new JButton("Valider");
 		JButton btnAnnuler = new JButton("Annuler");
+		
+		/* Listeners */
+		CreationListener crLs = new CreationListener(mainWindow);
+		
+		btnValider.addActionListener(crLs);
+		btnValider.setActionCommand("CreatePoste");
+		
+		btnAnnuler.addActionListener(crLs);
 		
 		/* Ajout des éléments graphiques */
 		mainPanel.add(labelReference);

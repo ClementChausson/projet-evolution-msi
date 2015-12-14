@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import com.msi.project.evolution.listener.CreationListener;
+
 public class ScreenWindow extends JPanel {
 	private MainWindow mainWindow ;
 	private JPanel mainPanel;
@@ -42,6 +44,14 @@ public class ScreenWindow extends JPanel {
 		/* Création des boutons */
 		JButton btnValider = new JButton("Valider");
 		JButton btnAnnuler = new JButton("Annuler");
+		
+		/* Listeners */
+		CreationListener crLs = new CreationListener(mainWindow);
+		
+		btnValider.addActionListener(crLs);
+		btnValider.setActionCommand("CreateScreen");
+		
+		btnAnnuler.addActionListener(crLs);
 		
 		/* Ajout des éléments graphiques */
 		mainPanel.add(labelReference);
